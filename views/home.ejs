@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/header.ejs") %>
+</head>
+<body>
+    <div class="container">
+        <form action="/searchByKeyword" method="GET">
+        Keyword: <input type="text" name="keyword">
+        <button class="btn btn-outline-primary">Search By Keyword</button>
+    </form>
+    </div>
+    
+
+    <br>
+    <div class="container">
+        <form action="/searchByAuthor" method="GET">
+        Author:
+        <select name="authorId">
+            <% for(let i of authors) {%>
+            <option value="<%=i.authorId%>"><%= i.firstName%> <%= i.lastName%></option>
+            <% } %>
+        </select>
+
+        <button class="btn btn-outline-primary">Search By Author</button>
+    </form>
+    </div>
+    
+
+    <br>
+    <div class="container">
+        <form action="/searchByCategory" method="GET">
+        Category:
+        <select name="category">
+            <% for (let i of categories) { %>
+            <option value="<%=i.category%>"><%= i.category%></option>
+            <% } %>
+        </select>
+
+        <button class="btn btn-outline-primary">Search By Category</button>
+    </form>
+    </div>
+    
+
+    <br>
+    <div class="container">
+        <form action="/searchByLikes" method="GET">
+        Likes Between: <input type="number" name="num1" min=0 max=200> and <input type="number" name="num2" min=0 max=200>
+        <button class="btn btn-outline-primary">Search By Likes</button>
+    </form>
+    </div>
+    
+    
+
+</body>
+
+<footer>
+    <%- include("partials/footer.ejs")%>
+</footer>
+</html>

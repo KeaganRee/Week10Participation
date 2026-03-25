@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/header.ejs") %>
+</head>
+<body>
+    <% for (let i of rows) { %>
+    <div class="container p-2 mt-2 mb-2 border border-primary-subtle border-3 rounded">
+        
+        <span class="lead fw-bold">"<%= i.quote %>"</span> <br>
+        <div class="lead text-end me-3">- <%= i.firstName %> <%= i.lastName %> </div><br> 
+        <div class="lead text-end me-3 text-danger">Likes: <%=i.likes%></div> <br> 
+        
+
+    </div>
+    <% } %>
+
+</body>
+
+<footer>
+    <%- include("partials/footer.ejs")%>
+</footer>
+</html>
